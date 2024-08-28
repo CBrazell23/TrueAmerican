@@ -110,22 +110,23 @@ def draw_scoreboard():
             scoreboard_surface.blit(text_surface, (20, y_offset))
 
             # Draw + and - buttons
-            plus_button_rect = pygame.Rect(SCOREBOARD_WIDTH - 60, y_offset, 20, 20)
-            minus_button_rect = pygame.Rect(SCOREBOARD_WIDTH - 30, y_offset, 20, 20)
+            minus_button_rect = pygame.Rect(SCOREBOARD_WIDTH - 60, y_offset, 20, 20)
+            plus_button_rect = pygame.Rect(SCOREBOARD_WIDTH - 30, y_offset, 20, 20)
 
-            pygame.draw.rect(scoreboard_surface, (255, 255, 255), plus_button_rect)  # White for +
             pygame.draw.rect(scoreboard_surface, (255, 255, 255), minus_button_rect)  # White for -
+            pygame.draw.rect(scoreboard_surface, (255, 255, 255), plus_button_rect)  # White for +
 
             # Render + and - text
-            plus_text = text_font.render('+', True, scoreboard_bg_color)
             minus_text = text_font.render('-', True, scoreboard_bg_color)
+            plus_text = text_font.render('+', True, scoreboard_bg_color)
 
             # Center the + and - text in their respective rectangles
-            plus_text_rect = plus_text.get_rect(center=plus_button_rect.center)
             minus_text_rect = minus_text.get_rect(center=minus_button_rect.center)
+            plus_text_rect = plus_text.get_rect(center=plus_button_rect.center)
 
-            scoreboard_surface.blit(plus_text, plus_text_rect)
             scoreboard_surface.blit(minus_text, minus_text_rect)
+            scoreboard_surface.blit(plus_text, plus_text_rect)
+
 
             y_offset += space_between_scores  # Move down for the next player's score
 
@@ -208,8 +209,8 @@ while run:
                     for idx, player in enumerate(players):
                         space_between_scores = SCOREBOARD_HEIGHT // (len(scores) + 1)
                         y_offset = (idx + 1) * space_between_scores
-                        plus_button_rect = pygame.Rect(SCOREBOARD_WIDTH - 60, y_offset, 20, 20)
-                        minus_button_rect = pygame.Rect(SCOREBOARD_WIDTH - 30, y_offset, 20, 20)
+                        plus_button_rect = pygame.Rect(SCOREBOARD_WIDTH - 30, y_offset, 20, 20)
+                        minus_button_rect = pygame.Rect(SCOREBOARD_WIDTH - 60, y_offset, 20, 20)
 
                         if plus_button_rect.collidepoint(mouse_x, mouse_y):
                             scores[player] += 1

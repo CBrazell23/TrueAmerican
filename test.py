@@ -21,7 +21,7 @@ large_font = pygame.font.SysFont("Arial", 60)
 clock = pygame.time.Clock()
 
 # Initialize player scores and game settings
-players = ["Andrew", "Cole", "Andreas", "Holly", "Shreya", "Annie", "Ben", "Peter", "Shit", "Dom", "Penis"]
+players = ["Andrew", "Cole", "Andreas", "Holly", "Shreya", "Annie"]
 scores = {player: 0 for player in players}
 
 # Crazy and normal options for the game
@@ -117,8 +117,8 @@ def draw_scoreboard():
             pygame.draw.rect(scoreboard_surface, (255, 255, 255), minus_button_rect)  # White for -
 
             # Render + and - text
-            plus_text = text_font.render('+', True, scoreboard_bg_color)
             minus_text = text_font.render('-', True, scoreboard_bg_color)
+            plus_text = text_font.render('+', True, scoreboard_bg_color)
 
             # Center the + and - text in their respective rectangles
             plus_text_rect = plus_text.get_rect(center=plus_button_rect.center)
