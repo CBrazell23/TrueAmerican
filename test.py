@@ -21,7 +21,7 @@ large_font = pygame.font.SysFont("Arial", 60)
 clock = pygame.time.Clock()
 
 # Initialize player scores and game settings
-players = ["Andrew", "Cole", "Andreas", "Holly", "Shreya", "Annie"]
+players = ["Andrew", "Cole", "Andreas", "Holly", "Shreya", "Annie", "Ben", "Peter", "Shit", "Dom", "Penis"]
 scores = {player: 0 for player in players}
 
 # Crazy and normal options for the game
